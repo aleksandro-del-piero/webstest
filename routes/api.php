@@ -205,9 +205,4 @@ Route::prefix('v1')->group(function () {
          */
         Route::delete('personal-access-tokens', [PersonalAccessTokenController::class, 'destroy']);
     });
-
-    Route::get('test', function () {
-        event(new \App\Events\MyEvent('hello world'));
-        return response()->json(['event' => 'hello world']);
-    });
 });

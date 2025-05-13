@@ -42,6 +42,7 @@ class CommentRepository extends BaseRepository
     public function get(IndexCommentDto $dto): LengthAwarePaginator
     {
         return $this->model->newQuery()
+            ->with('user')
             ->where('news_id', $dto->news_id)
             ->when($dto->user_id, function ($query, $userId) use ($dto) {
                 $query->where('user_id', $userId);

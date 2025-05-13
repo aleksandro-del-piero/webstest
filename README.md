@@ -51,10 +51,26 @@ Laravel is a web application framework with expressive and elegant syntax. It pr
 6. **Migrate database and seeding**:
 
     ```bash
-    php artisan migrate --seed
+    php artisan migrate:fresh --seed
     ```
 
-7. **Start the development server**:
+7. **Configure websockets**:
+
+   ```env
+   PUSHER_APP_ID=
+   PUSHER_APP_KEY=
+   PUSHER_APP_SECRET=
+   PUSHER_PORT=443
+   PUSHER_SCHEME="https"
+   PUSHER_APP_CLUSTER="eu"
+
+8. **Configure sentry**:
+
+   ```env
+   SENTRY_LARAVEL_DSN=
+   SENTRY_TRACES_SAMPLE_RATE=1.0   
+
+9. **Start the development server**:
 
     ```bash
     php artisan serve
